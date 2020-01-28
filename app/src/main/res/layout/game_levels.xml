@@ -26,15 +26,15 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/button_back"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/button_back"
-                    android:textSize="24sp"
+                    android:background="@drawable/button_start"
                     android:paddingLeft="25dp"
                     android:paddingRight="25dp"
+                    android:text="@string/button_back"
                     android:textColor="@color/white"
-                    android:background="@drawable/style_btn_back"/>
+                    android:textSize="24sp" />
             </LinearLayout>
 
             <ScrollView
