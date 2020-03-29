@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="levelone">Выберите число, которое больше.\nВопросы будут повторятся, пока вы не наберете 20 очков.</string>
+    <string name="leveloneEnd">"\t\t\t\t\tПоздравляем уровень пройден.\n
+        А знаете ли вы что число 7 является счастливым числом.
+        Существует 7 дней в неделе, 7 континентов, 7 цветов радуги, 7 нот и не только.
+        Так же число 7 чаще является самым любимым числом в мире."</string>
     //Choose number which is greater.\nQuestions can be repeated, while you get 20 points.
 </resources>

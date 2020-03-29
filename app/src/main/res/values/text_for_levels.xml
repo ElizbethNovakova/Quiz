@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="level1_zero">Ноль</string>
+    <string name="level1_one">Один</string>
+    <string name="level1_two">Два</string>
+    <string name="level1_three">Три</string>
+    <string name="level1_four">Четыре</string>
+    <string name="level1_five">Пять</string>
+    <string name="level1_six">Шесть</string>
+    <string name="level1_seven">Семь</string>
+    <string name="level1_eight">Восемь</string>
+    <string name="level1_nine">Девять</string>
+</resources>
