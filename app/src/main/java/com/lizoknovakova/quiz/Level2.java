@@ -4,8 +4,8 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
@@ -18,7 +18,7 @@ import android.widget.TextView;
 
 import java.util.Random;
 
-public class Level1 extends AppCompatActivity {
+public class Level2 extends AppCompatActivity {
 
     Dialog dialog;
     Dialog dialogEnd;
@@ -51,11 +51,19 @@ public class Level1 extends AppCompatActivity {
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         //Вызов диалогового окна в начале игры
-        dialog = new Dialog(this);
+        dialog= new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);//скрываем заголовок
         dialog.setContentView(R.layout.previewdialog);//путь к макету диалогового окна
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));//прозрачный фон диалогового окна
         dialog.setCancelable(false);//окно нельзя закріть кнопкой назад
+
+        //set image into dialog
+        ImageView previewImg = dialog.findViewById(R.id.pereviewimg);
+        previewImg.setImageResource(R.drawable.previewlevel2);
+
+        //exercise discription
+        TextView textDescription = dialog.findViewById(R.id.text_description);
+        textDescription.setText(R.string.leveltwo);
 
 
         //кнопка которая закрывает диалоговое окно
@@ -66,7 +74,7 @@ public class Level1 extends AppCompatActivity {
                 //обрабатываем нажатие кнопки
                 try{
                     //вернуться к вібору уровня
-                    Intent intent = new Intent(Level1.this, GameLevels.class);
+                    Intent intent = new Intent(Level2.this, GameLevels.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e){
@@ -86,7 +94,8 @@ public class Level1 extends AppCompatActivity {
 
         dialog.show();//показать диалоговое окно
 
-        //_________________________________
+        //___________
+
         //show dialog in the end
         dialogEnd = new Dialog(this);
         dialogEnd.requestWindowFeature(Window.FEATURE_NO_TITLE);//скрываем заголовок
@@ -95,6 +104,10 @@ public class Level1 extends AppCompatActivity {
         dialogEnd.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT,
                 WindowManager.LayoutParams.MATCH_PARENT);
         dialogEnd.setCancelable(false);//окно нельзя закріть кнопкой назад
+
+        //interesting fact
+        TextView textDescriptionEnd = dialogEnd.findViewById(R.id.text_description);
+        textDescriptionEnd.setText(R.string.levelTwoEnd);
 
 
         //кнопка которая закрывает диалоговое окно
@@ -105,7 +118,7 @@ public class Level1 extends AppCompatActivity {
                 //обрабатываем нажатие кнопки
                 try{
                     //вернуться к вібору уровня
-                    Intent intent = new Intent(Level1.this, GameLevels.class);
+                    Intent intent = new Intent(Level2.this, GameLevels.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e){
@@ -115,12 +128,13 @@ public class Level1 extends AppCompatActivity {
             }
         });
 
+        //button continue
         Button buttonContinueEnd = dialogEnd.findViewById(R.id.button_continue);
         buttonContinueEnd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Level1.this, Level2.class);
+                    Intent intent = new Intent(Level2.this, Level2.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e){
@@ -129,8 +143,7 @@ public class Level1 extends AppCompatActivity {
                 dialog.dismiss();//закрываем диалоговое окно
             }
         });
-
-        //_________________________________
+        //_____________
 
         //Кнопка назад
         Button button_back = findViewById(R.id.button_back);
@@ -138,7 +151,7 @@ public class Level1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try{
-                    Intent intent = new Intent(Level1.this, GameLevels.class);
+                    Intent intent = new Intent(Level2.this, GameLevels.class);
                     startActivity(intent);
                     finish();
                 }catch (Exception e){
@@ -156,19 +169,19 @@ public class Level1 extends AppCompatActivity {
         };
 
         //animation
-        final Animation a = AnimationUtils.loadAnimation(Level1.this, R.anim.alpha);
+        final Animation a = AnimationUtils.loadAnimation(Level2.this, R.anim.alpha);
 
         numLeft = random.nextInt(10);//random num from 0 to 9
-        imageLeft.setImageResource(numbers.images[numLeft]);//image from array
-        textLeft.setText(numbers.texts[numLeft]);//text for left img
+        imageLeft.setImageResource(numbers.romanNumbersImages[numLeft]);//image from array
+        textLeft.setText(numbers.texts2[numLeft]);//text for left img
 
         numRight = random.nextInt(10);//random num from 0 to 9
         //loop equal num
         while (numLeft == numRight){
             numRight = random.nextInt(10);
         }
-        imageRight.setImageResource(numbers.images[numRight]);//image from array
-        textRight.setText(numbers.texts[numRight]);//text for right img
+        imageRight.setImageResource(numbers.romanNumbersImages[numRight]);//image from array
+        textRight.setText(numbers.texts2[numRight]);//text for right img
 
         //tap left img
         imageLeft.setOnTouchListener(new View.OnTouchListener() {
@@ -225,18 +238,18 @@ public class Level1 extends AppCompatActivity {
                         dialogEnd.show();
                     } else{
                         numLeft = random.nextInt(10);//random num from 0 to 9
-                        imageLeft.setImageResource(numbers.images[numLeft]);//image from array
+                        imageLeft.setImageResource(numbers.romanNumbersImages[numLeft]);//image from array
                         imageLeft.startAnimation(a);
-                        textLeft.setText(numbers.texts[numLeft]);//text for left img
+                        textLeft.setText(numbers.texts2[numLeft]);//text for left img
 
                         numRight = random.nextInt(10);//random num from 0 to 9
                         //loop equal num
                         while (numLeft == numRight){
                             numRight = random.nextInt(10);
                         }
-                        imageRight.setImageResource(numbers.images[numRight]);//image from array
+                        imageRight.setImageResource(numbers.romanNumbersImages[numRight]);//image from array
                         imageRight.startAnimation(a);
-                        textRight.setText(numbers.texts[numRight]);//text for right img
+                        textRight.setText(numbers.texts2[numRight]);//text for right img
 
                         imageRight.setEnabled(true);
                     }
@@ -299,20 +312,21 @@ public class Level1 extends AppCompatActivity {
 
                     if(count == 20){
                         //exit from level
+                        dialogEnd.show();
                     } else{
                         numLeft = random.nextInt(10);//random num from 0 to 9
-                        imageLeft.setImageResource(numbers.images[numLeft]);//image from array
+                        imageLeft.setImageResource(numbers.romanNumbersImages[numLeft]);//image from array
                         imageLeft.startAnimation(a);
-                        textLeft.setText(numbers.texts[numLeft]);//text for left img
+                        textLeft.setText(numbers.texts2[numLeft]);//text for left img
 
                         numRight = random.nextInt(10);//random num from 0 to 9
                         //loop equal num
                         while (numLeft == numRight){
                             numRight = random.nextInt(10);
                         }
-                        imageRight.setImageResource(numbers.images[numRight]);//image from array
+                        imageRight.setImageResource(numbers.romanNumbersImages[numRight]);//image from array
                         imageRight.startAnimation(a);
-                        textRight.setText(numbers.texts[numRight]);//text for right img
+                        textRight.setText(numbers.texts2[numRight]);//text for right img
 
                         imageLeft.setEnabled(true);
                     }
@@ -328,7 +342,7 @@ public class Level1 extends AppCompatActivity {
     @Override
     public  void onBackPressed(){
         try{
-            Intent intent = new Intent(Level1.this, GameLevels.class);
+            Intent intent = new Intent(Level2.this, GameLevels.class);
             startActivity(intent);
             finish();
         }catch (Exception e){

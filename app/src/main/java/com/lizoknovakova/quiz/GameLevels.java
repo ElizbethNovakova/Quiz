@@ -39,9 +39,29 @@ public class GameLevels extends AppCompatActivity {
         textView1.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(GameLevels.this, Level1.class);
-                startActivity(intent);
-                finish();
+                try {
+                    Intent intent = new Intent(GameLevels.this, Level1.class);
+                    startActivity(intent);
+                    finish();
+                } catch (Exception e){
+
+                }
+            }
+        });
+
+        //button for second level
+
+        TextView textView2 = findViewById(R.id.textView2);
+        textView2.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    Intent intent = new Intent(GameLevels.this, Level2.class);
+                    startActivity(intent);
+                    finish();
+                } catch (Exception e){
+
+                }
             }
         });
     }

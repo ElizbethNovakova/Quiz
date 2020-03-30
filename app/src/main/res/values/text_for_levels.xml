@@ -10,4 +10,16 @@
     <string name="level1_seven">Семь</string>
     <string name="level1_eight">Восемь</string>
     <string name="level1_nine">Девять</string>
+
+
+    <string name="level2_one">Один</string>
+    <string name="level2_two">Два</string>
+    <string name="level2_three">Три</string>
+    <string name="level2_four">Четыре</string>
+    <string name="level2_five">Пять</string>
+    <string name="level2_six">Шесть</string>
+    <string name="level2_seven">Семь</string>
+    <string name="level2_eight">Восемь</string>
+    <string name="level2_nine">Девять</string>
+    <string name="level2_ten">Десять</string>
 </resources>

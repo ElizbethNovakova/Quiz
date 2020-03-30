@@ -28,4 +28,30 @@ public class Numbers {
             R.string.level1_eight,
             R.string.level1_nine
     };
+
+    final int[] romanNumbersImages = {
+            R.drawable.twolevel_one,
+            R.drawable.twolevel_two,
+            R.drawable.twolevel_three,
+            R.drawable.twolevel_four,
+            R.drawable.twolevel_five,
+            R.drawable.twolevel_six,
+            R.drawable.twolevel_seven,
+            R.drawable.twolevel_eight,
+            R.drawable.twolevel_nine,
+            R.drawable.twolevel_ten
+    };
+
+    final int[] texts2 = {
+            R.string.level2_one,
+            R.string.level2_two,
+            R.string.level2_three,
+            R.string.level2_four,
+            R.string.level2_five,
+            R.string.level2_six,
+            R.string.level2_seven,
+            R.string.level2_eight,
+            R.string.level2_nine,
+            R.string.level2_ten
+    };
 }
