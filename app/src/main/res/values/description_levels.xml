@@ -9,5 +9,6 @@
     <string name="leveltwo">Выберите римское число, которое больше.\nВопросы будут повторятся, пока вы не наберете 20 очков.</string>
     <string name="levelTwoEnd">"Поздравляем, уровень пройден!
         А знаете ли вы что в римских цифрах отсутствует числло ноль."</string>
-    //Choose number which is greater.\nQuestions can be repeated, while you get 20 points.
+
+    <string name="levelthree">Кто из животных больше показывает язык?\nВопросы будут повторятся, пока вы не наберете 20 очков.</string>
 </resources>

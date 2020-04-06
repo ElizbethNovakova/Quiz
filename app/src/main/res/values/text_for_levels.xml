@@ -22,4 +22,27 @@
     <string name="level2_eight">Восемь</string>
     <string name="level2_nine">Девять</string>
     <string name="level2_ten">Десять</string>
+
+    <string name="level3_one">Белка</string>
+    <string name="level3_two">Кролик</string>
+    <string name="level3_three">Котик</string>
+    <string name="level3_four">Сенги</string>
+    <string name="level3_five">Ежик</string>
+    <string name="level3_six">Гекон</string>
+    <string name="level3_seven">Обезьяна</string>
+    <string name="level3_eight">Панда</string>
+    <string name="level3_nine">Мопс</string>
+    <string name="level3_ten">Баран</string>
+    <string name="level3_eleven">Горила</string>
+    <string name="level3_twelve">Корги</string>
+    <string name="level3_thirteen">Лиса</string>
+    <string name="level3_fourteen">Лошадь</string>
+    <string name="level3_fifteen">Кот</string>
+    <string name="level3_sixteen">Жираф</string>
+    <string name="level3_seventeen">Собака</string>
+    <string name="level3_eighteen">Тигр</string>
+    <string name="level3_nineteen">Корова</string>
+    <string name="level3_twenty">Медведь</string>
+    <string name="level3_twenty_one">Медведь</string>
+    <string name="level3_twenty_two">Муравьед</string>
 </resources>

@@ -14,11 +14,13 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.Random;
 
-public class Level2 extends AppCompatActivity {
+public class Level3 extends AppCompatActivity {
 
     Dialog dialog;
     Dialog dialogEnd;
@@ -50,6 +52,9 @@ public class Level2 extends AppCompatActivity {
         Window w = getWindow(); //убрали строку состояния(заряд и тд)
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        //background for dialog
+
+
         //Вызов диалогового окна в начале игры
         dialog= new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);//скрываем заголовок
@@ -59,11 +64,15 @@ public class Level2 extends AppCompatActivity {
 
         //set image into dialog
         ImageView previewImg = dialog.findViewById(R.id.pereviewimg);
-        previewImg.setImageResource(R.drawable.previewlevel2);
+        previewImg.setImageResource(R.drawable.preview_img);
+
+        //set backgroung into dialog
+        LinearLayout dialogBackground = dialog.findViewById(R.id.dialogfon);
+        dialogBackground.setBackgroundResource(R.drawable.preview_background_l3);
 
         //exercise discription
         TextView textDescription = dialog.findViewById(R.id.text_description);
-        textDescription.setText(R.string.leveltwo);
+        textDescription.setText(R.string.levelthree);
 
 
         //кнопка которая закрывает диалоговое окно
@@ -74,7 +83,7 @@ public class Level2 extends AppCompatActivity {
                 //обрабатываем нажатие кнопки
                 try{
                     //вернуться к вібору уровня
-                    Intent intent = new Intent(Level2.this, GameLevels.class);
+                    Intent intent = new Intent(Level3.this, GameLevels.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e){
@@ -118,7 +127,7 @@ public class Level2 extends AppCompatActivity {
                 //обрабатываем нажатие кнопки
                 try{
                     //вернуться к вібору уровня
-                    Intent intent = new Intent(Level2.this, GameLevels.class);
+                    Intent intent = new Intent(Level3.this, GameLevels.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e){
@@ -134,7 +143,7 @@ public class Level2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    Intent intent = new Intent(Level2.this, Level3.class);
+                    Intent intent = new Intent(Level3.this, Level3.class);
                     startActivity(intent);
                     finish();
                 } catch (Exception e){
@@ -151,7 +160,7 @@ public class Level2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try{
-                    Intent intent = new Intent(Level2.this, GameLevels.class);
+                    Intent intent = new Intent(Level3.this, GameLevels.class);
                     startActivity(intent);
                     finish();
                 }catch (Exception e){
@@ -169,19 +178,19 @@ public class Level2 extends AppCompatActivity {
         };
 
         //animation
-        final Animation a = AnimationUtils.loadAnimation(Level2.this, R.anim.alpha);
+        final Animation a = AnimationUtils.loadAnimation(Level3.this, R.anim.alpha);
 
-        numLeft = random.nextInt(10);//random num from 0 to 9
-        imageLeft.setImageResource(numbers.romanNumbersImages[numLeft]);//image from array
-        textLeft.setText(numbers.texts2[numLeft]);//text for left img
+        numLeft = random.nextInt(22);//random num from 0 to 22
+        imageLeft.setImageResource(numbers.animal_img_level3[numLeft]);//image from array
+        textLeft.setText(numbers.texts3[numLeft]);//text for left img
 
-        numRight = random.nextInt(10);//random num from 0 to 9
+        numRight = random.nextInt(22);//random num from 0 to 22
         //loop equal num
         while (numLeft == numRight){
             numRight = random.nextInt(10);
         }
-        imageRight.setImageResource(numbers.romanNumbersImages[numRight]);//image from array
-        textRight.setText(numbers.texts2[numRight]);//text for right img
+        imageRight.setImageResource(numbers.animal_img_level3[numRight]);//image from array
+        textRight.setText(numbers.texts3[numRight]);//text for right img
 
         //tap left img
         imageLeft.setOnTouchListener(new View.OnTouchListener() {
@@ -237,19 +246,19 @@ public class Level2 extends AppCompatActivity {
                         //exit from level
                         dialogEnd.show();
                     } else{
-                        numLeft = random.nextInt(10);//random num from 0 to 9
-                        imageLeft.setImageResource(numbers.romanNumbersImages[numLeft]);//image from array
+                        numLeft = random.nextInt(22);//random num from 0 to 22
+                        imageLeft.setImageResource(numbers.animal_img_level3[numLeft]);//image from array
                         imageLeft.startAnimation(a);
-                        textLeft.setText(numbers.texts2[numLeft]);//text for left img
+                        textLeft.setText(numbers.texts3[numLeft]);//text for left img
 
-                        numRight = random.nextInt(10);//random num from 0 to 9
+                        numRight = random.nextInt(22);//random num from 0 to 22
                         //loop equal num
                         while (numLeft == numRight){
-                            numRight = random.nextInt(10);
+                            numRight = random.nextInt(22);
                         }
-                        imageRight.setImageResource(numbers.romanNumbersImages[numRight]);//image from array
+                        imageRight.setImageResource(numbers.animal_img_level3[numRight]);//image from array
                         imageRight.startAnimation(a);
-                        textRight.setText(numbers.texts2[numRight]);//text for right img
+                        textRight.setText(numbers.texts3[numRight]);//text for right img
 
                         imageRight.setEnabled(true);
                     }
@@ -314,19 +323,19 @@ public class Level2 extends AppCompatActivity {
                         //exit from level
                         dialogEnd.show();
                     } else{
-                        numLeft = random.nextInt(10);//random num from 0 to 9
-                        imageLeft.setImageResource(numbers.romanNumbersImages[numLeft]);//image from array
+                        numLeft = random.nextInt(22);//random num from 0 to 22
+                        imageLeft.setImageResource(numbers.animal_img_level3[numLeft]);//image from array
                         imageLeft.startAnimation(a);
-                        textLeft.setText(numbers.texts2[numLeft]);//text for left img
+                        textLeft.setText(numbers.texts3[numLeft]);//text for left img
 
-                        numRight = random.nextInt(10);//random num from 0 to 9
+                        numRight = random.nextInt(22);//random num from 0 to 9
                         //loop equal num
                         while (numLeft == numRight){
-                            numRight = random.nextInt(10);
+                            numRight = random.nextInt(22);
                         }
-                        imageRight.setImageResource(numbers.romanNumbersImages[numRight]);//image from array
+                        imageRight.setImageResource(numbers.animal_img_level3[numRight]);//image from array
                         imageRight.startAnimation(a);
-                        textRight.setText(numbers.texts2[numRight]);//text for right img
+                        textRight.setText(numbers.texts3[numRight]);//text for right img
 
                         imageLeft.setEnabled(true);
                     }
@@ -342,7 +351,7 @@ public class Level2 extends AppCompatActivity {
     @Override
     public  void onBackPressed(){
         try{
-            Intent intent = new Intent(Level2.this, GameLevels.class);
+            Intent intent = new Intent(Level3.this, GameLevels.class);
             startActivity(intent);
             finish();
         }catch (Exception e){
